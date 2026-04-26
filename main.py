@@ -4,8 +4,7 @@ import psycopg2
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import *
 
-TOKEN = os.getenv("8790616490:AAFO9XklOIAH9J9P3KjDo_ORmAjdI_Z3nH8")
-ADMIN_ID = 5928576476
+TOKEN = os.getenv("TOKEN")
 
 # ================= DB =================
 
