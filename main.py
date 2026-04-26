@@ -9,7 +9,6 @@ ADMIN_ID = 5928576476  # آیدی خودت
 
 
 # ================= APP =================
-app = ApplicationBuilder().token(TOKEN).build()
 
 # ================= DB =================
 conn = psycopg2.connect(os.getenv("DATABASE_URL"))
