@@ -3,9 +3,12 @@ import time
 import psycopg2
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import *
+print("TOKEN =", TOKEN)
+import os
 
 TOKEN = os.getenv("TOKEN")
 
+app = ApplicationBuilder().token(TOKEN).build()
 # ================= DB =================
 
 conn = psycopg2.connect(os.getenv("DATABASE_URL"))
