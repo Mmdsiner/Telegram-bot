@@ -191,3 +191,4 @@ app.add_handler(MessageHandler(filters.TEXT, handle))
 
 print("RUNNING")
 app.run_polling()
+print("RUNNING NEW VERSION")
