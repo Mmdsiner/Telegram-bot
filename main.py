@@ -3,7 +3,9 @@ import time
 import psycopg2
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import *
-print("TOKEN =", TOKEN)
+
+print("TOKEN LENGTH:", len(TOKEN) if TOKEN else "NONE")
+
 import os
 
 TOKEN = os.getenv("TOKEN")
