@@ -4,11 +4,12 @@ import psycopg2
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import *
 
-print("TOKEN LENGTH:", len(TOKEN) if TOKEN else "NONE")
-
 import os
 
 TOKEN = os.getenv("TOKEN")
+
+print("TOKEN VALUE:", TOKEN)
+print("TOKEN LENGTH:", len(TOKEN) if TOKEN else "NONE")
 
 app = ApplicationBuilder().token(TOKEN).build()
 # ================= DB =================
