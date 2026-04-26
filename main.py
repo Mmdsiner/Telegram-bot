@@ -7,7 +7,6 @@ from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandle
 TOKEN = os.getenv("TOKEN")
 ADMIN_ID = 5928576476  # آیدی خودت
 
-print("TOKEN:", TOKEN)
 
 # ================= APP =================
 app = ApplicationBuilder().token(TOKEN).build()
