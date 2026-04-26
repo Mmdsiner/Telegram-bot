@@ -1,1 +1,2 @@
-worker: python main.py 
+python-telegram-bot==20.7
+psycopg2-binary 
