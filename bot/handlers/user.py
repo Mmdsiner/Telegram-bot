@@ -18,7 +18,7 @@ async def amount(message: Message, state: FSMContext):
     amount = int(message.text)
     data = await state.get_data()
 
-    price_key = "normal_price" if data["plan"] == "normal" else "vip_price"
+    price_key = "normal_price" if data.get("plan") else "other_price"
 
     price = await fetch("SELECT value FROM settings WHERE key=$1", price_key)
     price = int(price[0]["value"])
