@@ -16,11 +16,10 @@ async def main():
     bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
 
-    # اتصال دیتابیس
     await connect()
     await init_db()
 
-    # 🔥 حل مشکل Conflict و webhook
+    # 🔥 مهم
     await bot.delete_webhook(drop_pending_updates=True)
 
     # ثبت هندلرها
@@ -30,7 +29,6 @@ async def main():
 
     print("BOT STARTED ✅")
 
-    # اجرای بات
     await dp.start_polling(bot)
 
 
