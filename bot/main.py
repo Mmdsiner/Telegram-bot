@@ -11,7 +11,7 @@ from aiogram.enums import ParseMode
 from config import BOT_TOKEN
 
 # هندلرها
-from bot.handlers import user, admin, payment
+from handlers import user, admin, payment
 
 async def main():
     if not BOT_TOKEN:
