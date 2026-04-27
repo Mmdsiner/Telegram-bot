@@ -2,7 +2,7 @@ import sys
 import os
 import asyncio
 
-# حل مشکل پیدا نکردن ماژول bot
+# حل مشکل import
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from aiogram import Bot, Dispatcher
@@ -10,10 +10,13 @@ from aiogram.enums import ParseMode
 
 from config import BOT_TOKEN
 
-# ایمپورت هندلرها
+# هندلرها
 from handlers import user, admin, payment
 
 async def main():
+    if not BOT_TOKEN:
+        raise ValueError("BOT_TOKEN تنظیم نشده!")
+
     bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
 
