@@ -7,7 +7,7 @@ router = Router()
 @router.message(Command("start"))
 async def start_handler(message: Message):
     await message.answer("🤖 ربات با موفقیت فعال شد!")    await state.set_state(BuyState.amount)
-    await call.message.answer("چند گیگ؟")
+    await message.answer("چند گیگ؟")
 
 
 @router.message(BuyState.amount)
