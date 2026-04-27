@@ -4,10 +4,10 @@ import logging
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 
-from bot.config import BOT_TOKEN
-from bot.database import connect, init_db
+from config import BOT_TOKEN
+from database import connect, init_db
 
-from bot.handlers import user, payment, admin
+from handlers import user, payment, admin
 
 
 async def main():
@@ -16,10 +16,11 @@ async def main():
     bot = Bot(token=BOT_TOKEN, parse_mode=ParseMode.HTML)
     dp = Dispatcher()
 
+    # اتصال دیتابیس
     await connect()
     await init_db()
 
-    # 🔥 مهم
+    # حل مشکل webhook و conflict
     await bot.delete_webhook(drop_pending_updates=True)
 
     # ثبت هندلرها
@@ -29,6 +30,7 @@ async def main():
 
     print("BOT STARTED ✅")
 
+    # اجرای ربات
     await dp.start_polling(bot)
 
 
